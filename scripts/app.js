@@ -27,9 +27,7 @@ fetch(
   .catch((err) => console.log(err));
 
 am4core.ready(function () {
-  // Themes begin
   am4core.useTheme(am4themes_animated);
-  // Themes end
 
   var continents = {
     AF: 0,
@@ -107,7 +105,6 @@ am4core.ready(function () {
 
       fetch(
         'https://agile-meadow-78327.herokuapp.com/api.covid19api.com/summary'
-        //`https://agile-meadow-78327.herokuapp.com/api.thevirustracker.com/free-api?countryTimeline=${ev.target.dataItem._dataContext.name}`
       )
         .then((res) => res.json())
         .then((res) => {
@@ -126,7 +123,6 @@ am4core.ready(function () {
       )
         .then((res) => res.json())
         .then((res) => {
-          //daily_cases = [];
           graph.style.display = 'block';
           var data = res.data;
           for (const key in data) {
